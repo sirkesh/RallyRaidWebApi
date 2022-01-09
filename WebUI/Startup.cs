@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
-namespace RallyRaidWebApi
+namespace WebUI
 {
     public class Startup
     {
@@ -23,7 +23,7 @@ namespace RallyRaidWebApi
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "RallyRaidWebApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebUI", Version = "v1" });
             });
         }
 
@@ -34,7 +34,7 @@ namespace RallyRaidWebApi
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RallyRaidWebApi v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebUI v1"));
             }
 
             app.UseHttpsRedirection();
